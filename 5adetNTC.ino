@@ -15,8 +15,8 @@ for(int i = 0 ;i<4 ; i++)
   R2 = R1 * (1023.0 / (float)Vo - 1.0);
   logR2 = log(R2);
   T = (1.0 / (c1 + c2*logR2 + c3*logR2*logR2*logR2));
-  T = T - 273.15;
-  //T = (T * 9.0)/ 5.0 + 32.0; 
+  T = T - 273.15; //do not subtract 273.15 for kelvin
+  //T = (T * 9.0)/ 5.0 + 32.0; //Use this for fahreneit
   Temp[i] = T;
   Serial.print(Temp[i]); 
   Serial.print(" ");
